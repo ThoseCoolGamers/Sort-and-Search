@@ -51,25 +51,10 @@ void LinearSearch(int searchnumber, vector<int> numbervector, int startpos)
 //
 //  PURPOSE:   Sorts an int vector from biggest to smallest
 //
-//  ALGORITHM: First the function finds the biggest number by creating
-//             an int called biggest number and setting it to zero. Then
-//             it loops through the vector and every time it finds
-//             an int bigger than the biggest number it sets the biggest
-//             number to be the number greater than itself. After
-//             finding the biggest number we have a for loop that runs
-//             as long as the unsorted vector size is less than the
-//             size of the sorted vector. Within that loop we have another
-//             loop that runs until an unsigned int called x is less
-//             than the size of the unsorted vector. In that loop we
-//             check if the unsorted vector at x is equal to the
-//             biggest number minus the offset if this is true then the
-//             function adds the unsorted vector at x to the sorted
-//             vector. After the loop we increment the offset to the
-//             biggest number because our first run down of the vector
-//             only got any number thats equal to the biggest number
-//             and thus is not a fully sorted vector we need every
-//             other number so that its a fully sorted vector with
-//             all the same numbers and the same size!
+//  ALGORITHM: The algorithm works by pushing back the biggest
+//             number in the unsorted vector into the sorted vector.
+//             Then it does the same with the next biggest number
+//             until it reaches the smallest number.
 
 vector<int> VecSort(vector<int> unsortedvector)
 {
@@ -100,14 +85,9 @@ vector<int> VecSort(vector<int> unsortedvector)
 //  PURPOSE:   This searches through a sorted vector and tells the user
 //             all the index were a specified number was found.
 //
-//  ALGORITHM: First the algorithm checks to see if the number we're
-//             searching for is greater than or less than the number
-//             in the middle of the sorted vector. If it is greater
-//             than the middle number of the vector than preform a
-//             typical linear search, however if the number we're
-//             searching for is less than the number in the middle
-//             of the sorted vector than preform a linear search
-//             that starts in the middle of the sorted vector.
+//  ALGORITHM: It preforms a normal linear search if the search number
+//             is greater than half the sorted vector, If its not then
+//             preform a linear search starting at half the sorted vector.
 void BinarySearch(int searchnumber, std::vector<int> sortedvector)
 {
     if(sortedvector.at(sortedvector.size()/2) < searchnumber)
